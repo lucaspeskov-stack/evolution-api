@@ -57,4 +57,4 @@ ENV DOCKER_ENV=true
 
 EXPOSE 8080
 
-ENTRYPOINT ["npm", "run", "start:prod"]
+ENTRYPOINT ["/bin/bash", "-c", "npm run start:prod"]
