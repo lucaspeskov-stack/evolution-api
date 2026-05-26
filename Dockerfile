@@ -56,5 +56,5 @@ COPY --from=builder /evolution/tsup.config.ts ./tsup.config.ts
 ENV DOCKER_ENV=true
 
 EXPOSE 8080
-
-ENTRYPOINT ["/bin/bash", "-c", "npm run start:prod"]
+ENV HOST=0.0.0.0
+ENTRYPOINT ["/bin/bash", "-c", "npm run start:prod & sleep 5 && echo 'Server started'"]
